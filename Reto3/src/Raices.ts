@@ -13,4 +13,11 @@ class Raices {
     }
 
     //3-Métodos de la class
+    getDiscriminante(): number {
+        return (this.b**2) - 4 * this.a * this.c; 
+    }
+
+    tieneRaices(): boolean {
+        return this.getDiscriminante() >= 0;
+    }
 }
