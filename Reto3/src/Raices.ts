@@ -20,4 +20,25 @@ class Raices {
     tieneRaices(): boolean {
         return this.getDiscriminante() >= 0;
     }
+
+    tieneRaiz(): boolean {
+        const discriminante = this.getDiscriminante();
+        return discriminante == 0;
+    }
+
+    calcular(): void {
+        const discriminante = this.getDiscriminante();
+
+        if (discriminante > 0) {
+            const solucionUno = (-this.b + Math.sqrt(discriminante)) / (2 * this.a);
+            const solucionDos = (-this.b - Math.sqrt(discriminante)) / (2 * this.a);
+            console.log("x1 = ", solucionUno);
+            console.log("x2 = ", solucionDos);
+        } else if (discriminante == 0) {
+            const x = -this.b / (2 * this.a);
+            console.log("x =", x);
+        } else {
+            console.log("No tiene solución.");
+        }
+    }
 }
