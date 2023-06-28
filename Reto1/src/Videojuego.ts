@@ -54,4 +54,32 @@ class Videojuego{
     toString(){
         return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
     }
+
+    entregar(): void {
+        this.entregado = true;
+    }
+
+    devolver(): void {
+        this.entregado = false;
+    }
+
+    isEntregado(): boolean {
+        return this.entregado;
+    }
+
+    compareTo(obj: Object): void {
+        
+        const videojuego = obj as Videojuego;
+
+        if (this.horasEstimadas > videojuego.horasEstimadas) {
+            console.log(`El videojuego ${this.titulo} tiene mas horas de duración que el videojuego ${videojuego.titulo}`);
+
+        } else if (this.horasEstimadas < videojuego.horasEstimadas) {
+            console.log(`El videojuego ${videojuego.titulo} tiene mas horas de duración que el videojuego ${this.titulo}`);
+
+        } else {
+            console.log(`El videojuego ${this.titulo} tiene las mismas horas de duración que el videojuego ${videojuego.titulo}`);
+            
+        }
+    }
 }

@@ -1,4 +1,4 @@
-class Serie {
+class Serie implements Entregable {
 
     // Atributos
     private titulo: string;
@@ -52,6 +52,34 @@ class Serie {
     toString(): string {
         return `Título: ${this.titulo} - Núm Temporadas: ${this.numTemporadas} - Entregado: ${this.entregado} - Género: ${this.genero} - Creador: ${this.creador}`;
         
+    }
+
+    entregar(): void {
+        this.entregado = true;
+    }
+
+    devolver(): void {
+        this.entregado = false;
+    }
+
+    isEntregado(): boolean {
+        return this.entregado;
+    }
+
+    compareTo(obj: Object): void {
+        
+        const serie = obj as Serie;
+
+        if (this.numTemporadas > serie.numTemporadas) {
+            console.log(`La serie ${this.titulo} tiene mas temporadas que la serie ${serie.titulo}`);
+
+        } else if (this.numTemporadas < serie.numTemporadas) {
+            console.log(`La serie ${serie.titulo} tiene mas temporadas que la serie ${this.titulo}`);
+
+        } else {
+            console.log(`La serie ${this.titulo} tiene las mismas temporadas que la serie ${serie.titulo}`);
+            
+        }
     }
 
 }
