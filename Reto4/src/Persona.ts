@@ -1,10 +1,12 @@
+type genero = 'H' | 'M'
+
 abstract class Persona {
 
     protected nombre:string;
     protected edad:number;
-    protected sexo:string;
+    protected sexo:genero;
 
-    constructor(newNombre:string, newEdad:number, newSexo:string) {
+    constructor(newNombre:string, newEdad:number, newSexo:genero) {
         this.nombre = newNombre;
         this.edad = newEdad;
         this.sexo = newSexo;
@@ -32,7 +34,7 @@ abstract class Persona {
         return this.sexo;
     }
 
-    setSexo(newSexo: string): void {
+    setSexo(newSexo: genero): void {
         this.sexo = newSexo;
     }
 }

@@ -10,4 +10,10 @@ class Estudiante extends Persona {
         let resultado = Math.floor((Math.random() * (1 - 0 + 1)) + 0);
         return resultado ? true : false;
     }
+    getCalificacion() {
+        return this.calificacion;
+    }
+    setCalificacion(newCalificacion) {
+        this.calificacion = newCalificacion;
+    }
 }

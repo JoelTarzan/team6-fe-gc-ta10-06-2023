@@ -6,7 +6,7 @@ class Estudiante extends Persona {
     private calificacion: typeCalificacion;
 
     // Constructor
-    constructor(newNombre: string, newEdad: number, newSexo: string, newCalificacion: typeCalificacion) {
+    constructor(newNombre: string, newEdad: number, newSexo: genero, newCalificacion: typeCalificacion) {
         super(newNombre, newEdad, newSexo);
         this.calificacion = newCalificacion;
     }
@@ -15,5 +15,13 @@ class Estudiante extends Persona {
     disponible(): boolean {
         let resultado = Math.floor((Math.random() * (1 - 0 + 1)) + 0);
         return resultado ? true : false;
+    }
+
+    getCalificacion(){
+        return this.calificacion;
+    }
+
+    setCalificacion(newCalificacion: typeCalificacion){
+        this.calificacion = newCalificacion;
     }
 }

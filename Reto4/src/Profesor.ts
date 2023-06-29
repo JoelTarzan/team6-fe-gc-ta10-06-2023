@@ -6,7 +6,7 @@ class Profesor extends Persona{
     private materia: typeMateria;
 
     //2- Constructor
-    constructor(newNombre:string, newEdad:number, newSexo:string, newMateria:typeMateria){
+    constructor(newNombre:string, newEdad:number, newSexo:genero, newMateria:typeMateria){
         super(newNombre, newEdad, newSexo);
         this.materia = newMateria;
     }
