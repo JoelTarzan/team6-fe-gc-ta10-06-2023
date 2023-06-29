@@ -32,8 +32,8 @@ for (let i = 0; i < espectadores.length; i++) {
     let asientoOcupado = true;
     if (espectadores[i].getDinero() >= cine.getPrecioEntrada() && espectadores[i].getEdad() >= pelicula.getEdadMin()) {
         while (asientoOcupado) {
-            let fil = Math.floor((Math.random() * (asientos.length - 0 + 1)) + 0);
-            let col = Math.floor((Math.random() * (asientos[0].length - 0 + 1)) + 0);
+            let fil = Math.floor((Math.random() * (asientos.length)));
+            let col = Math.floor((Math.random() * (asientos[0].length)));
             if (!asientos[fil][col].getOcupado()) {
                 asientos[fil][col].setOcupado(true);
                 console.log(asientos[fil][col].getNombre() + ' asignado');
