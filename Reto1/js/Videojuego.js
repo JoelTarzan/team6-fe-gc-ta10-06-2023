@@ -1,80 +1,57 @@
-const defHoras: number = 10;
-
-class Videojuego implements Entregable{
-    //1- Atributos de la class
-    //private
-    private titulo: string;
-    private horasEstimadas: number;
-    private entregado: boolean;
-    private genero: string;
-    private compañia: string;
-
+"use strict";
+const defHoras = 10;
+class Videojuego {
     //2- Constructor de la class
-    constructor(newTitulo: string, newHorasEst: number, newGenero: string, newCompañia: string){
+    constructor(newTitulo, newHorasEst, newGenero, newCompañia) {
         this.titulo = newTitulo;
         this.horasEstimadas = newHorasEst;
         this.entregado = false;
         this.genero = newGenero;
         this.compañia = newCompañia;
     }
-
     //3- Métodos de la class
-    getTitulo(){
+    getTitulo() {
         return this.titulo;
     }
-
-    setTitulo(newTitulo:string){
+    setTitulo(newTitulo) {
         return this.titulo = newTitulo;
     }
-
-    getHorasEstimadas(){
+    getHorasEstimadas() {
         return this.horasEstimadas;
     }
-
-    setHorasEstimadas(newHorasEst:number){
+    setHorasEstimadas(newHorasEst) {
         return this.horasEstimadas = newHorasEst;
     }
-    
-    getGenero(){
+    getGenero() {
         return this.genero;
     }
-
-    setGenero(newGenero:string){
+    setGenero(newGenero) {
         return this.genero = newGenero;
     }
-
-    getCompañia(){
+    getCompañia() {
         return this.compañia;
     }
-
-    setCompañia(newCompañia:string){
+    setCompañia(newCompañia) {
         return this.compañia = newCompañia;
     }
-
-    toString(){
+    toString() {
         return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
     }
-
-    entregar(): void {
+    entregar() {
         this.entregado = true;
     }
-
-    devolver(): void {
+    devolver() {
         this.entregado = false;
     }
-
-    isEntregado(): boolean {
+    isEntregado() {
         return this.entregado;
     }
-
-    compareTo(obj: Object): Videojuego {
-        
-        const videojuego = obj as Videojuego;
-
+    compareTo(obj) {
+        const videojuego = obj;
         if (this.horasEstimadas >= videojuego.horasEstimadas) {
             return this;
-
-        } else {
+        }
+        else {
             return videojuego;
         }
     }
