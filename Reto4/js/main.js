@@ -10,18 +10,23 @@ let alumnos = [
 let aula = new Aula(15, 10, 'Matematicas', profesor, alumnos);
 // Si se puede dar clase mostrar cuantos alumnos y alumnas (por separado) están aprobados de
 // momento (imaginad que les están entregando las notas).
-aula.puedeDarseClase() ? console.log('Se puede dar clase.') : console.log('No se puede dar clase.');
-let alumnasM = 0;
-let alumnosH = 0;
-for (let i = 0; i < alumnos.length; i++) {
-    if (alumnos[i].getCalificacion() >= 5) {
-        if (alumnos[i].getSexo() == 'M') {
-            alumnasM++;
-        }
-        else {
-            alumnosH++;
+if(aula.puedeDarseClase()){
+    console.log('Se puede dar clase.')
+    let alumnasM = 0;
+    let alumnosH = 0;
+    for (let i = 0; i < alumnos.length; i++) {
+        if (alumnos[i].getCalificacion() >= 5) {
+            if (alumnos[i].getSexo() == 'M') {
+                alumnasM++;
+            }
+            else {
+                alumnosH++;
+            }
         }
     }
+    console.log(`Las alumnas aprobadas son ${alumnasM}`);
+    console.log(`Los alumnos aprobadas son ${alumnosH}`);
+}else{
+    console.log('No se puede dar clase.');
 }
-console.log(alumnasM);
-console.log(alumnosH);
+
