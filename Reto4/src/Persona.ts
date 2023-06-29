@@ -1,8 +1,8 @@
 abstract class Persona {
 
-    private nombre:string;
-    private edad:number;
-    private sexo:string;
+    protected nombre:string;
+    protected edad:number;
+    protected sexo:string;
 
     constructor(newNombre:string, newEdad:number, newSexo:string) {
         this.nombre = newNombre;
