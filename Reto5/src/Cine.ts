@@ -1,12 +1,13 @@
 class Cine {
 
     // Propiedades
-    // private pelicula: Peliculas;
+    private pelicula: Peliculas;
     private precioEntrada: number;
     private asientos: Asiento[][];
 
     // Constructor
-    constructor(newPrecioEntrada: number) {
+    constructor(newPelicula: Peliculas, newPrecioEntrada: number) {
+        this.pelicula = newPelicula;
         this.precioEntrada = newPrecioEntrada;
         this.asientos = this.rellenarAsientos();
     }
