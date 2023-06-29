@@ -5,6 +5,7 @@ class Persona {
         this.edad = newEdad;
         this.sexo = newSexo;
     }
+
     getNombre() {
         return this.nombre;
     }
@@ -23,4 +24,5 @@ class Persona {
     setSexo(newSexo) {
         this.sexo = newSexo;
     }
+
 }
