@@ -1,81 +1,57 @@
-class Serie implements Entregable {
-
-    // Atributos
-    private titulo: string;
-    private numTemporadas: number;
-    private entregado: boolean;
-    private genero: string;
-    private creador: string;
-
+"use strict";
+class Serie {
     // Constructor
-    constructor(newTitulo: string, newCreador: string) {
+    constructor(newTitulo, newCreador) {
         this.titulo = newTitulo;
         this.numTemporadas = 3;
         this.entregado = false;
         this.genero = '';
         this.creador = newCreador;
     }
-
     // Métodos
-    getTitulo(): string {
+    getTitulo() {
         return this.titulo;
     }
-
-    setTitulo(newTitulo: string) {
+    setTitulo(newTitulo) {
         this.titulo = newTitulo;
     }
-
-    getNumTemporadas(): number {
+    getNumTemporadas() {
         return this.numTemporadas;
     }
-
-    setNumTemporadas(newNumTemporadas: number) {
+    setNumTemporadas(newNumTemporadas) {
         this.numTemporadas = newNumTemporadas;
     }
-
-    getGenero(): string {
+    getGenero() {
         return this.genero;
     }
-
-    setGenero(newGenero: string) {
+    setGenero(newGenero) {
         this.genero = newGenero;
     }
-
-    getCreador(): string {
+    getCreador() {
         return this.creador;
     }
-
-    setCreador(newCreador: string) {
+    setCreador(newCreador) {
         this.creador = newCreador;
     }
-
-    toString(): string {
+    toString() {
         return `Título: ${this.titulo} - Núm Temporadas: ${this.numTemporadas} - Entregado: ${this.entregado} - Género: ${this.genero} - Creador: ${this.creador}`;
-        
     }
-
-    entregar(): void {
+    entregar() {
         this.entregado = true;
     }
-
-    devolver(): void {
+    devolver() {
         this.entregado = false;
     }
-
-    isEntregado(): boolean {
+    isEntregado() {
         return this.entregado;
     }
-
-    compareTo(obj: Object): Serie {
-        
-        const serie = obj as Serie;
-
+    compareTo(obj) {
+        const serie = obj;
         if (this.numTemporadas >= serie.numTemporadas) {
             return this;
-
-        } else {
+        }
+        else {
             return serie;
-        } 
+        }
     }
-
 }
