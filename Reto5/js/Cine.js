@@ -1,7 +1,8 @@
 "use strict";
 class Cine {
     // Constructor
-    constructor(newPrecioEntrada) {
+    constructor(newPelicula, newPrecioEntrada) {
+        this.pelicula = newPelicula;
         this.precioEntrada = newPrecioEntrada;
         this.asientos = this.rellenarAsientos();
     }
