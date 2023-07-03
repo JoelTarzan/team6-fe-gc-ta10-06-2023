@@ -6,6 +6,7 @@ class Estudiante extends Persona {
         this.calificacion = newCalificacion;
     }
     // Métodos
+    // Determina de manera aleatoria si el estudiante esta disponible o no, habiendo un 50% de posibilidades de estar disponible
     disponible() {
         let resultado = Math.floor((Math.random() * (1 - 0 + 1)) + 0);
         return resultado ? true : false;
