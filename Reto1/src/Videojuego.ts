@@ -24,7 +24,7 @@ class Videojuego implements Entregable{
     }
 
     setTitulo(newTitulo:string){
-        return this.titulo = newTitulo;
+        this.titulo = newTitulo;
     }
 
     getHorasEstimadas(){
@@ -32,7 +32,7 @@ class Videojuego implements Entregable{
     }
 
     setHorasEstimadas(newHorasEst:number){
-        return this.horasEstimadas = newHorasEst;
+        this.horasEstimadas = newHorasEst;
     }
     
     getGenero(){
@@ -40,7 +40,7 @@ class Videojuego implements Entregable{
     }
 
     setGenero(newGenero:string){
-        return this.genero = newGenero;
+        this.genero = newGenero;
     }
 
     getCompañia(){
@@ -48,13 +48,10 @@ class Videojuego implements Entregable{
     }
 
     setCompañia(newCompañia:string){
-        return this.compañia = newCompañia;
+        this.compañia = newCompañia;
     }
 
-    toString(){
-        return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
-    }
-
+    // Metodos de la interfaz entregable
     entregar(): void {
         this.entregado = true;
     }
@@ -67,6 +64,7 @@ class Videojuego implements Entregable{
         return this.entregado;
     }
 
+    // Método para comparar 2 objetos del tipo Videojuego utilizando sus horas estimadas de juego.
     compareTo(obj: Object): Videojuego {
         
         const videojuego = obj as Videojuego;
@@ -77,5 +75,10 @@ class Videojuego implements Entregable{
         } else {
             return videojuego;
         }
+    }
+
+    // Método toString
+    toString(){
+        return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
     }
 }
