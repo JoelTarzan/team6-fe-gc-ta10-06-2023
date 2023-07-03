@@ -13,18 +13,24 @@ class Raices {
     }
 
     //3-Métodos de la class
+
+    //cálculo del discriminante
     getDiscriminante(): number {
         return (this.b**2) - (4 * this.a * this.c); 
     }
 
+    // marcamos como tiene raices si su discriminante es >= 0
     tieneRaices(): boolean {
         return this.getDiscriminante() >= 0;
     }
 
+    // marcamos como tiene raiz si su discriminante es == 0
     tieneRaiz(): boolean {
         return this.getDiscriminante() == 0;
     }
-
+    
+    //calculamos el resultado: primero obtenemos el discriminante con el método anterior y
+    //con if() ponemos la formula/formulas según si tiene una raiz, dos raices o si no tiene solución (que devuelve console.log)
     calcular(): void {
         const discriminante = this.getDiscriminante();
         
@@ -39,6 +45,8 @@ class Raices {
             console.log("No tiene solución.");
         }
     }
+
+    //según si tiene una o dos soluciones imprimimos por consola obtenerRaices() u obtenerRaiz() del método calcular()
 
     obtenerRaices(solucionUno:number, solucionDos:number){
         console.log("x1 = ", solucionUno);
