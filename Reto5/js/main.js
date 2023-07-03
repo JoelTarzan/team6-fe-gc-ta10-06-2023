@@ -1,4 +1,5 @@
 "use strict";
+//Creamos objetos de pelicula, cine y un array de espectadores
 const pelicula = new Peliculas('Five Nights at Freddy', 120, 12, 'Abraham Mateo');
 const cine = new Cine(pelicula, 8);
 const espectadores = [
@@ -30,13 +31,16 @@ const espectadores = [
 let asientos = cine.getAsientos();
 for (let i = 0; i < espectadores.length; i++) {
     let asientoOcupado = true;
+    //Comprobamos si el espectador tiene el dinero suficiente y si tiene la edad minima para ver la película.
     if (espectadores[i].getDinero() >= cine.getPrecioEntrada() && espectadores[i].getEdad() >= pelicula.getEdadMin()) {
         while (asientoOcupado) {
+            //Calcula un asiento de forma aleatoria.
             let fil = Math.floor((Math.random() * (asientos.length)));
             let col = Math.floor((Math.random() * (asientos[0].length)));
+            //Comprobamos si el asiento esta libre, si lo esta lo sentamos, sino le buscamos otro
             if (!asientos[fil][col].getOcupado()) {
                 asientos[fil][col].setOcupado(true);
-                console.log(asientos[fil][col].getNombre() + ' asignado');
+                console.log(`El asiento ${asientos[fil][col].getNombre()} a sido asignado al espectador ${espectadores[i].getNombre()}`);
                 asientoOcupado = false;
             }
         }
