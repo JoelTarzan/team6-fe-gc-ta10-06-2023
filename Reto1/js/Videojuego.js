@@ -14,29 +14,27 @@ class Videojuego {
         return this.titulo;
     }
     setTitulo(newTitulo) {
-        return this.titulo = newTitulo;
+        this.titulo = newTitulo;
     }
     getHorasEstimadas() {
         return this.horasEstimadas;
     }
     setHorasEstimadas(newHorasEst) {
-        return this.horasEstimadas = newHorasEst;
+        this.horasEstimadas = newHorasEst;
     }
     getGenero() {
         return this.genero;
     }
     setGenero(newGenero) {
-        return this.genero = newGenero;
+        this.genero = newGenero;
     }
     getCompañia() {
         return this.compañia;
     }
     setCompañia(newCompañia) {
-        return this.compañia = newCompañia;
+        this.compañia = newCompañia;
     }
-    toString() {
-        return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
-    }
+    // Metodos de la interfaz entregable
     entregar() {
         this.entregado = true;
     }
@@ -46,6 +44,7 @@ class Videojuego {
     isEntregado() {
         return this.entregado;
     }
+    // Método para comparar 2 objetos del tipo Videojuego utilizando sus horas estimadas de juego.
     compareTo(obj) {
         const videojuego = obj;
         if (this.horasEstimadas >= videojuego.horasEstimadas) {
@@ -54,5 +53,9 @@ class Videojuego {
         else {
             return videojuego;
         }
+    }
+    // Método toString
+    toString() {
+        return (`El título del videojuego es: ${this.titulo}, horas estimadas de juego: ${this.horasEstimadas}, es del genero ${this.genero} y producido por la compañía ${this.compañia}`);
     }
 }
