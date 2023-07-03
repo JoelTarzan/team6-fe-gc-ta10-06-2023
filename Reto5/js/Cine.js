@@ -16,7 +16,9 @@ class Cine {
     getAsientos() {
         return this.asientos;
     }
+    //Método para rellenar los asientos de forma aleatoria
     rellenarAsientos() {
+        //Inicializamos los datos
         let letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
         let numeros = [8, 7, 6, 5, 4, 3, 2, 1];
         let asientos = [];
